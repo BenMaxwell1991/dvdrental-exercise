@@ -33,6 +33,7 @@ docker-compose up --build
 
 ### 🛠️ **Step 3: test the endpoint**
 
+Open your browser and visit the following URL to test the endpoint:
 ```bash
-curl http://localhost:8080/api/recommendations/1
+http://localhost:8080/api/recommendations/1
 ```
