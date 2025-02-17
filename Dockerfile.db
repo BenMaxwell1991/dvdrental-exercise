@@ -4,11 +4,11 @@ ENV POSTGRES_DB="dvdrental"
 ENV POSTGRES_USER="postgres"
 ENV POSTGRES_PASSWORD="postgres"
 
-RUN apt-get update && apt-get install -y wget unzip
+RUN apt-get update && apt-get install -y wget unzip dos2unix
 
-# Download and extract the sample database
 RUN wget -nv "https://neon.tech/postgresqltutorial/dvdrental.zip" -O "/tmp/dvdrental.zip" && \
     unzip -q "/tmp/dvdrental.zip" -d /tmp
 
+# Copy the script and ensure it's usable across all environments
 COPY restoredb.sh /docker-entrypoint-initdb.d/
-RUN dos2unix /docker-entrypoint-initdb.d/restoredb.sh || true
+RUN dos2unix /docker-entrypoint-initdb.d/restoredb.sh && chmod +x /docker-entrypoint-initdb.d/restoredb.sh
