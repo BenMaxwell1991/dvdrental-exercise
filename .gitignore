@@ -1,52 +1,82 @@
-HELP.md
+# Maven build output
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
+# IntelliJ-specific files
+.idea/
 *.iws
 *.iml
 *.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-# Compiled class file
 *.class
 
-# Log file
+# IDE caches
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/
+.vscode/
+.sts4-cache
+.springBeans
+.settings
+
+# Logs
 *.log
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+*.out
+*.err
 hs_err_pid*
 replay_pid*
+
+# OS-specific files
+*.DS_Store
+*.Thumbs.db
+
+# Compiled binaries
+*.class
+
+# Application binaries
+*.jar
+*.war
+*.ear
+*.tar.gz
+*.zip
+*.rar
+
+# Docker-related files
+docker-compose.override.yml
+.docker/
+docker-volume-data/
+*.tar  # For database dumps like dvdrental.tar
+
+# Environment and secrets
+.env
+*.key
+*.pem
+*.crt
+
+# Test output
+/test-output/
+/jacoco/
+.sonar/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# Build artifacts
+build/
+
+# Generated docs
+/doc/
+docs/
+*.docx
+*.pdf
+
+# Coverage reports
+/coverage/
+*.cov
+*.lcov
+
+# Distribution folder (already tracked manually)
+# Keep the dist/ folder but ignore everything inside except JARs
+/dist/*
+!/dist/*.jar
