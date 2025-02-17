@@ -33,7 +33,6 @@ replay_pid*
 *.class
 
 # Application binaries
-*.jar
 *.war
 *.ear
 *.tar.gz
